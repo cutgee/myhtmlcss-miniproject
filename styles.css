@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double:wght@100..900&family=Bitcount+Single:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Bitcount Prop Double", system-ui;
+}
+
+body {
+    display: flex;
+    background-color: #FFF5E6;
+}
+
+/* Navigation */
+.nav {
+    width: 6vw;
+    height: 100vh;
+    background-color: #FF9AA2;
+    position: fixed;
+    transition: all 0.3s;
+}
+
+.nav:hover {
+    width: 8vw;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 15%;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: all 0.3s;
+    cursor: pointer;
+    color: white;
+    font-size: 1.2vw;
+    text-align: center;
+    flex-direction: column;
+}
+
+.icon i {
+    font-size: 2vw;
+    margin-bottom: 10px;
+}
+
+.icon:hover {
+    margin-left: 1px;
+    border-left: 4px solid #FF6B6B;
+    background-color: #FFB7B2;
+    color: #5E2B2B;
+}
+
+/* Main Content Area */
+.main-content {
+    margin-left: 6vw;
+    width: 94vw;
+}
+
+/* Header Banner */
+.header-banner, .footer-banner {
+    width: 100%;
+    height: 100px;
+    background-image: url('donut3.png');
+    background-size: contain;
+    border-bottom: 2px solid #800006;
+}
+
+.footer-banner {
+    border-top: 2px solid #800006;
+    border-bottom: none;
+}
+
+/* Donut Display with Background */
+.donut-display {
+    height: 300px;
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.donut-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('donut-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px) brightness(0.8);
+    z-index: 1;
+}
+
+.donut-image {
+    height: 80%;
+    width: auto;
+    border-radius: 50%;
+    animation: donutRotate 20s linear infinite;
+    position: relative;
+    z-index: 2;
+    border: 5px solid rgba(255,255,255,0.3);
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+@keyframes donutRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Menu Card */
+.menu-card {
+    background-color: #FFDAC1;
+    width: 80%;
+    min-height: 80vh;
+    margin: 20px auto;
+    border: 2px solid #800006;
+    background-image: repeating-conic-gradient(#FFB7B2 0% 25%, #FFDAC1 0% 50%);
+    background-position: 0 0, 0 0;
+    background-size: 50px 50px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.header {
+    color: #5E2B2B;
+    text-align: center;
+    background-image: conic-gradient(#FF9AA2, #FFB7B2, #FFDAC1);
+    font-family: "Bitcount Prop Double", system-ui;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    font-size: 2.5rem;
+}
+
+.category {
+    color: #5E2B2B;
+    margin-left: 20px;
+    margin-top: 30px;
+    font-size: 1.8rem;
+    text-decoration: underline;
+}
+
+.menu-list {
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: 15px;
+    list-style-type: none;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    margin: 10px 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.menu-item:hover {
+    transform: scale(1.02);
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.menu-item span:first-child {
+    font-weight: bold;
+}
+
+.menu-item span:last-child {
+    color: #FF6B6B;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav {
+        width: 15vw;
+    }
+    
+    .nav:hover {
+        width: 20vw;
+    }
+    
+    .main-content {
+        margin-left: 15vw;
+        width: 85vw;
+    }
+    
+    .icon {
+        font-size: 2vw;
+    }
+    
+    .icon i {
+        font-size: 4vw;
+    }
+    
+    .menu-card {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav {
+        width: 20vw;
+    }
+    
+    .nav:hover {
+        width: 25vw;
+    }
+    
+    .main-content {
+        margin-left: 20vw;
+        width: 80vw;
+    }
+    
+    .icon {
+        font-size: 3vw;
+    }
+    
+    .icon i {
+        font-size: 5vw;
+    }
+    
+    .header {
+        font-size: 1.8rem;
+    }
+    
+    .category {
+        font-size: 1.4rem;
+    }
+}
